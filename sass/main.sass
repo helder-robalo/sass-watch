@@ -1,0 +1,45 @@
+// it's an extension that contains variables that you can use to set colors
+@import colors
+//when you need pass a value and get back a entire block of css, kind of a function
+@import mixins
+//DRY principle, like colors for not repeating yourself too much
+@import extensions
+
+body
+  display: block
+  border: 1px solid $white
+
+  #nested-to-body
+    display: none
+
+/*
+  multiple
+  lines
+  comments
+  don't forget to give an space before close
+  the comment tag
+  (2 space in this case)
+  */
+#outside-body
+  display: block
+
+// I can add comments that only appears here
+.also-works-with-classes
+  color: $blue
+  @include border-radius(10px)
+
+.success
+  @extend .message
+  border-color: green
+
+.error
+  @extend .message
+  border-color: red
+
+.warning
+  @extend .message
+  border-color: yellow
+
+//we can modularize our css
+@import module-datepicker
+@import module-topbar
